@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'knox',
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
+    'versatileimagefield',
+    'supplements.apps.SupplementsConfig'
 ]
 
 MIDDLEWARE = [
