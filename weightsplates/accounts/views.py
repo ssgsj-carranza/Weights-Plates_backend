@@ -1,12 +1,16 @@
+from django.http import Http404
 from django.shortcuts import render
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from knox.models import AuthToken
+from rest_framework.views import APIView
+
 from .serializers import UserSerializer, RegisterSerializer
 from django.contrib.auth import login
 from rest_framework import permissions
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
+from .models import User
 
 
 # Register API
@@ -32,3 +36,17 @@ class LoginAPI(KnoxLoginView):
         user = serializer.validated_data['user']
         login(request, user)
         return super(LoginAPI, self).post(request, format=None)
+
+
+class UserDetail(APIView):
+
+    def get_object(self, pk):
+        try:
+            return User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk):
+        users = self.get_object(pk)
+        serializer = UserSerializer(users)
+        return Response(serializer.data)
