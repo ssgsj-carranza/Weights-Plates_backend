@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'versatileimagefield',
     'supplements.apps.SupplementsConfig',
+    'nutrients.apps.NutrientsConfig',
     'corsheaders'
 ]
 
