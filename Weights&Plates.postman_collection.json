@@ -162,6 +162,115 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get_User_by_Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token fe84a29266e935e718def32d01fecfce8960661949fc3643f08d080d6cbba435",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_nutrition_data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.spoonacular.com/food/ingredients/9266/information?apiKey=e7d2ab60104c4c6e9967f95e3023ff0b&amount=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spoonacular",
+						"com"
+					],
+					"path": [
+						"food",
+						"ingredients",
+						"9266",
+						"information"
+					],
+					"query": [
+						{
+							"key": "apiKey",
+							"value": "e7d2ab60104c4c6e9967f95e3023ff0b"
+						},
+						{
+							"key": "amount",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_all_nutrients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/nutrients/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"nutrients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_nutrients_by_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/nutrients/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"nutrients",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
